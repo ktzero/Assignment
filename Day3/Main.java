@@ -25,13 +25,14 @@ public class Main {
 		//for loop will play as many games as specified by totalGames
 		for(int i = 0; i <= totalGames;i++)
 		{
-			//re-initialize status of win or lose for a new game
+			//reset status of win or lose and point for a new game
 			win = false; gameOver = false;
+			pointRolled = false;
 			while(!win && !gameOver)
 			{
 				//roll the dice and get the sum
 				diceSum = die1.rollDie() + die2.rollDie();
-				//System.out.println("The roll was: " + diceSum);
+				System.out.println("The roll was: " + diceSum);
 				//first round of the game where 7 = win and 2,3, or 12 is lose
 				if(!pointRolled)
 				{
@@ -61,10 +62,10 @@ public class Main {
 					{	gameOver = true;	}
 				}
 			}
-			//if(gameOver)
-			//	System.out.println("You lose!");
-			//else if(win)
-			//	System.out.println("You win!");
+			if(gameOver)
+				System.out.println("You lose!");
+			else if(win)
+				System.out.println("You win!");
 		}
 		
 		//display totals after N totalGames won
